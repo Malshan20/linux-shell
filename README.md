@@ -46,3 +46,45 @@ The shell operates on an infinite **Read-Parse-Execute** loop:
 ```bash
    git clone [https://github.com/yourusername/c-shell.git](https://github.com/yourusername/c-shell.git)
    cd c-shell
+
+Compile the source code:
+
+Bash
+   gcc -Wall -Wextra -O2 shell.c -o osh
+Launch the shell:
+
+Bash
+   ./osh
+💻 Usage Examples
+1. Basic Commands & Built-ins
+
+Bash
+osh> pwd
+osh> cd /tmp
+osh> ls -la
+2. Standard I/O Redirection
+
+Bash
+osh> echo "Hello, Systems Programming!" > output.txt
+osh> cat < output.txt
+3. Process Pipelining
+
+Bash
+osh> cat shell.c | grep "fork" | wc -l
+4. Background Jobs
+
+Bash
+osh> sleep 10 &
+[Process spawned with PID: 54321]
+osh> echo "I can keep typing!"
+🗺️ Roadmap & Future Enhancements
+[ ] Multi-Pipelining: Support unlimited chaining (cmd1 | cmd2 | cmd3).
+
+[ ] Job Control System: Implement jobs, fg, and bg commands tracking PIDs in a struct array.
+
+[ ] Environment Variables: Expansion for strings like $HOME and $PATH.
+
+[ ] Command History: Implement up/down arrow memory (via readline or custom buffer).
+
+📜 License
+Distributed under the MIT License. See LICENSE for more information.
